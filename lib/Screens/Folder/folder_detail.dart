@@ -39,7 +39,7 @@ class _FolderDetailState extends State<FolderDetail> {
                           icon: Icon(Icons.arrow_back)),
                       Text(
                         // widget.folderData["name"],
-                        "Chapter Name",
+                        widget.folderData["name"],
                         style: GoogleFonts.montserrat(
                             fontSize: 34, fontWeight: FontWeight.w500),
                       )
@@ -81,7 +81,10 @@ class _FolderDetailState extends State<FolderDetail> {
                 padding: EdgeInsets.all(30),
                 child: Row(
                   children: [
-                    Image.asset("assets/flashCard.png"),
+                    CircleAvatar(
+                      backgroundImage: AssetImage("assets/flashCard.png"),
+                      radius: 40,
+                    ),
                     SizedBox(
                       width: 30,
                     ),
@@ -109,11 +112,14 @@ class _FolderDetailState extends State<FolderDetail> {
             child: Padding(
               padding: EdgeInsets.all(20),
               child: Container(
-                color: Color(0xffFFD1D1),
+                color: Color(0xffE9D1FF),
                 padding: EdgeInsets.all(30),
                 child: Row(
                   children: [
-                    Image.asset("assets/flashCard.png"),
+                    CircleAvatar(
+                      backgroundImage: AssetImage("assets/Notes.png"),
+                      radius: 40,
+                    ),
                     SizedBox(
                       width: 30,
                     ),
@@ -141,11 +147,14 @@ class _FolderDetailState extends State<FolderDetail> {
             child: Padding(
               padding: EdgeInsets.all(20),
               child: Container(
-                color: Color(0xffFFD1D1),
+                color: Color(0xffDDFFD1),
                 padding: EdgeInsets.all(30),
                 child: Row(
                   children: [
-                    Image.asset("assets/flashCard.png"),
+                    CircleAvatar(
+                      backgroundImage: AssetImage("assets/Summary.png"),
+                      radius: 40,
+                    ),
                     SizedBox(
                       width: 30,
                     ),
@@ -188,21 +197,27 @@ class _FolderDetailState extends State<FolderDetail> {
             child: Padding(
               padding: EdgeInsets.all(20),
               child: Container(
-                color: Color(0xffFFD1D1),
+                color: Color(0xffFFE6CE),
                 padding: EdgeInsets.all(30),
                 child: Row(
                   children: [
-                    Image.asset("assets/flashCard.png"),
+                    CircleAvatar(
+                      backgroundImage: AssetImage("assets/QandA.png"),
+                      radius: 40,
+                    ),
                     SizedBox(
                       width: 30,
                     ),
-                    AutoSizeText(
-                      "Question and Answer",
-                      maxLines: 2,
-                      softWrap: true,
-                      minFontSize: 20,
-                      style: GoogleFonts.montserrat(
-                        fontWeight: FontWeight.w500,
+                    SizedBox(
+                      width: 170,
+                      child: AutoSizeText(
+                        "Question and Answer",
+                        maxLines: 2,
+                        softWrap: true,
+                        minFontSize: 20,
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     )
                   ],
