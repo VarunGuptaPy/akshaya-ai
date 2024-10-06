@@ -227,10 +227,10 @@ class _FeatureCardState extends State<FeatureCard> {
                                             String filePath =
                                                 result.files.single.path!;
                                             File file;
-                                            if (filePath != null &&
+                                            if (filePath == "" &&
                                                 filePath.contains('/drive')) {
                                               showSnackBar(context,
-                                                  "pdf selected from wrong source");
+                                                  "pdf selected from wrong source or it is not selected");
                                             } else {
                                               file = File(
                                                   result.files.single.path!);
@@ -319,10 +319,18 @@ class _FeatureCardState extends State<FeatureCard> {
                                                                     ImageSource
                                                                         .camera,
                                                                     context);
-                                                            Navigator.pop(
-                                                                context);
-                                                            widget
-                                                                .doNext!(text);
+                                                            if (text.isEmpty) {
+                                                              showSnackBar(
+                                                                  context,
+                                                                  "Image not selected");
+                                                              Navigator.pop(
+                                                                  context);
+                                                            } else {
+                                                              Navigator.pop(
+                                                                  context);
+                                                              widget.doNext!(
+                                                                  text);
+                                                            }
                                                           } catch (e) {
                                                             showSnackBar(
                                                                 context,
@@ -347,10 +355,18 @@ class _FeatureCardState extends State<FeatureCard> {
                                                                     ImageSource
                                                                         .gallery,
                                                                     context);
-                                                            Navigator.pop(
-                                                                context);
-                                                            widget
-                                                                .doNext!(text);
+                                                            if (text.isEmpty) {
+                                                              showSnackBar(
+                                                                  context,
+                                                                  "Image not selected");
+                                                              Navigator.pop(
+                                                                  context);
+                                                            } else {
+                                                              Navigator.pop(
+                                                                  context);
+                                                              widget.doNext!(
+                                                                  text);
+                                                            }
                                                           } catch (e) {
                                                             showSnackBar(
                                                                 context,

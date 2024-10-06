@@ -301,6 +301,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 2,
               color: Colors.black,
             ),
+            ListTile(
+              onTap: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (c) => SignInScreen()));
+              },
+              leading: Icon(
+                Icons.person_outline,
+                size: 35,
+              ),
+              title: Text(
+                "Logout",
+                style: GoogleFonts.montserrat(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                    color: headingColor),
+              ),
+            ),
+            Container(
+              height: 2,
+              color: Colors.black,
+            ),
           ],
         ),
       ),

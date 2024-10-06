@@ -32,19 +32,25 @@ Future<String> pickImageAndConvertText(
   String text = "";
   try {
     if (imagesource == ImageSource.gallery) {
-      final pickedFile = await ImagePicker().pickMultiImage();
-      if (pickedFile == Null) throw "Image not selected";
-      for (int i = 0; i < pickedFile!.length; i++) {
-        InputImage inputImage = InputImage.fromFilePath(pickedFile[i].path);
-        text += await _extractText(inputImage);
+      final pickedFile = await ImagePicker().pickMultiImage(limit: 4);
+      if (pickedFile.isEmpty) {
+        return "";
+      } else {
+        for (int i = 0; i < pickedFile!.length; i++) {
+          InputImage inputImage = InputImage.fromFilePath(pickedFile[i].path);
+          text += await _extractText(inputImage);
+        }
       }
     } else if (imagesource == ImageSource.camera) {
       final pickedFile = await ImagePicker().pickImage(
         source: ImageSource.camera,
       );
-      if (pickedFile == Null) throw "Image not selected";
-      InputImage inputImage = InputImage.fromFilePath(pickedFile!.path);
-      text += await _extractText(inputImage);
+      if (pickedFile == null)
+        return "";
+      else {
+        InputImage inputImage = InputImage.fromFilePath(pickedFile!.path);
+        text += await _extractText(inputImage);
+      }
     }
     return text;
   } catch (e) {
