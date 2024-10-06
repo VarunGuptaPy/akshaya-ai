@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1050898495798",
+    "project_id": "akshaya-ai",
+    "storage_bucket": "akshaya-ai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050898495798:android:79daf4ae1eaed542c45b97",
+        "android_client_info": {
+          "package_name": "com.aksayaai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzNiAewZQ2nxR5l_odfm-T5ij5D9_iK-g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
